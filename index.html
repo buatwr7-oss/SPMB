@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPMB SMK Wiraguna Limbangan</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        pixel: ['"Press Start 2P"', 'monospace'],
+                        fantasy: ['"Cinzel"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    colors: {
+                        rpg: {
+                            dark: '#0d0c1d',
+                            surface: '#16152a',
+                            card: '#1f1e38',
+                            gold: '#f39c12',
+                            goldHover: '#f1c40f',
+                            border: '#e4b14a',
+                            parchment: '#fdf6e2',
+                            accent: '#e74c3c'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts for Fantasy & Pixel aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for RPG Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #0d0c1d;
+            color: #fdf6e2;
+            font-family: 'Inter', sans-serif;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(142, 68, 173, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(243, 156, 18, 0.1) 0%, transparent 40%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .rpg-panel {
+            background: linear-gradient(135deg, #1f1e38 0%, #131226 100%);
+            border: 2px solid #e4b14a;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 15px rgba(243, 156, 18, 0.1);
+        }
+
+        .rpg-button {
+            background: linear-gradient(180deg, #f39c12 0%, #d35400 100%);
+            border: 3px solid #f1c40f;
+            box-shadow: 0 6px 0 #8e44ad, 0 10px 20px rgba(0,0,0,0.4);
+            text-shadow: 1px 1px 0px rgba(0,0,0,0.6);
+            transition: all 0.15s ease;
+        }
+
+        .rpg-button:hover {
+            background: linear-gradient(180deg, #f5b041 0%, #e67e22 100%);
+            transform: translateY(2px);
+            box-shadow: 0 4px 0 #8e44ad, 0 8px 15px rgba(0,0,0,0.4);
+        }
+
+        .rpg-button:active {
+            transform: translateY(6px);
+            box-shadow: 0 0 0 #8e44ad, 0 4px 8px rgba(0,0,0,0.4);
+        }
+
+        .rpg-button-secondary {
+            background: linear-gradient(180deg, #34495e 0%, #2c3e50 100%);
+            border: 3px solid #5d6d7e;
+            box-shadow: 0 6px 0 #1b2631, 0 10px 20px rgba(0,0,0,0.4);
+            text-shadow: 1px 1px 0px rgba(0,0,0,0.6);
+            transition: all 0.15s ease;
+        }
+
+        .rpg-button-secondary:hover {
+            background: linear-gradient(180deg, #3a539b 0%, #203152 100%);
+            transform: translateY(2px);
+            box-shadow: 0 4px 0 #1b2631, 0 8px 15px rgba(0,0,0,0.4);
+        }
+
+        .loot-item {
+            background: rgba(22, 21, 42, 0.8);
+            border: 2px dashed #e4b14a;
+            transition: all 0.2s ease;
+        }
+
+        .loot-item:hover {
+            border-style: solid;
+            border-color: #f1c40f;
+            transform: translateY(-3px);
+            background: rgba(31, 30, 56, 0.9);
+            box-shadow: 0 8px 20px rgba(243, 156, 18, 0.2);
+        }
+    </style>
+</head>
+<body class="py-6 px-4 sm:px-6 md:px-8">
+
+    <div class="max-w-4xl mx-auto">
+        <header class="text-center mb-8 sm:mb-12">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 mb-3 bg-amber-500/10 border border-amber-400 text-amber-400 text-[10px] sm:text-xs font-pixel rounded-full shadow-lg animate-pulse">
+                <i class="fa-solid fa-shield-halved"></i> SPMB QUEST ACTIVE: 2026/2027
+            </div>
+            <h1 class="font-fantasy text-xl sm:text-3xl md:text-4xl font-black tracking-wide text-amber-300 mb-2 drop-shadow-[0_3px_10px_rgba(243,156,18,0.4)] px-2">
+                Sistem Penerimaan Murid Baru (SPMB)
+            </h1>
+	<h1 class="font-fantasy text-xl sm:text-3xl md:text-4xl font-black tracking-wide text-amber-300 mb-2 drop-shadow-[0_3px_10px_rgba(243,156,18,0.4)] px-2">
+                SMK WIRAGUNA LIMBANGAN
+            </h1>
+            <p class="text-xs sm:text-sm text-gray-300 max-w-2xl mx-auto leading-relaxed px-4 font-sans">
+                Panggilan bagi para petualang muda! Pilih jalur pendaftaranmu, kumpulkan item persyaratan, dan mulailah perjalanan bersama kami di SMK Wiraguna Limbangan.
+            </p>
+        </header>
+
+        <section class="rpg-panel rounded-xl p-5 sm:p-8 mb-8 relative overflow-hidden">
+            <div class="absolute -right-8 -bottom-8 opacity-5 text-8xl sm:text-9xl text-amber-400 pointer-events-none">
+                <i class="fa-solid fa-scroll"></i>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 border-b border-amber-500/30 pb-4">
+                <div class="flex items-center gap-2.5">
+                    <span class="bg-red-600 text-white font-pixel text-[9px] sm:text-[10px] px-2.5 py-1 rounded border border-red-400 font-bold shadow">MAIN QUEST</span>
+                    <h2 class="font-fantasy text-lg sm:text-xl font-bold text-amber-200">Misi Utama Calon Murid Baru</h2>
+                </div>
+                <div class="text-[11px] font-pixel text-amber-400 bg-black/40 px-3 py-1 rounded border border-amber-500/30 self-start sm:self-auto">
+                    STATUS: <span class="text-green-400 animate-pulse">BUKA</span>
+                </div>
+            </div>
+            
+            <p class="text-gray-300 text-xs sm:text-sm leading-relaxed mb-6 font-sans">
+                Selamat datang di papan petualangan resmi Sistem Penerimaan Murid Baru (SPMB). Selesaikan persyaratan di bawah ini melalui pendaftaran online atau kunjungi Sekolah secara langsung!
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-6">
+                <div class="bg-black/40 p-4 rounded-lg border border-amber-500/20 text-center">
+                    <div class="text-amber-400 font-pixel text-[10px] mb-1">STAGE 1</div>
+                    <div class="font-bold text-white text-xs sm:text-sm">Kumpulkan Persyaratan</div>
+                    <div class="text-[11px] text-gray-400 mt-1">Lengkapi 5 Syarat Berkas</div>
+                </div>
+                <div class="bg-black/40 p-4 rounded-lg border border-amber-500/20 text-center">
+                    <div class="text-amber-400 font-pixel text-[10px] mb-1">STAGE 2</div>
+                    <div class="font-bold text-white text-xs sm:text-sm">Pilih Jalur Pendaftaran</div>
+                    <div class="text-[11px] text-gray-400 mt-1">Online Form / Datang Offline</div>
+                </div>
+                <div class="bg-black/40 p-4 rounded-lg border border-amber-500/20 text-center">
+                    <div class="text-amber-400 font-pixel text-[10px] mb-1">STAGE 3</div>
+                    <div class="font-bold text-white text-xs sm:text-sm">Verifikasi Data</div>
+                    <div class="text-[11px] text-gray-400 mt-1">Resmi Jadi Siswa Wiraguna</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-10">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-1">
+                <h3 class="font-fantasy text-lg sm:text-xl font-bold text-amber-300 flex items-center gap-2">
+                    <i class="fa-solid fa-briefcase text-amber-400"></i> Syarat Pendaftaran
+                </h3>
+                <span class="text-xs font-pixel text-gray-400">5 Item Dokumen Wajib & Tambahan</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4">
+                <!-- Requirement 1 -->
+                <div class="loot-item p-4 rounded-xl flex items-start gap-3.5">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-rpg-dark border-2 border-amber-400 flex items-center justify-center text-amber-400 text-lg sm:text-xl rounded-lg shrink-0 shadow-inner">
+                        <i class="fa-solid fa-file-pen"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between">
+                            <span class="font-pixel text-[10px] text-amber-400">ITEM #01</span>
+                            <span class="text-[10px] font-pixel bg-green-900/60 text-green-300 px-2 py-0.5 rounded border border-green-600">Wajib</span>
+                        </div>
+                        <h4 class="font-bold text-white text-sm sm:text-base mt-1">Mengisi Formulir Pendaftaran</h4>
+                        <p class="text-xs text-gray-300 mt-0.5">Mengisi data diri lengkap pada tautan formulir pendaftaran yang disediakan.</p>
+                    </div>
+                </div>
+
+                <!-- Requirement 2 -->
+                <div class="loot-item p-4 rounded-xl flex items-start gap-3.5">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-rpg-dark border-2 border-amber-400 flex items-center justify-center text-amber-400 text-lg sm:text-xl rounded-lg shrink-0 shadow-inner">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between">
+                            <span class="font-pixel text-[10px] text-amber-400">ITEM #02</span>
+                            <span class="text-[10px] font-pixel bg-green-900/60 text-green-300 px-2 py-0.5 rounded border border-green-600">Wajib</span>
+                        </div>
+                        <h4 class="font-bold text-white text-sm sm:text-base mt-1">Fotocopy Ijazah SD/MI & SMP/MTS</h4>
+                        <p class="text-xs text-gray-300 mt-0.5">Lampirkan fotocopy ijazah tingkat sebelumnya.</p>
+                    </div>
+                </div>
+
+                <!-- Requirement 3 -->
+                <div class="loot-item p-4 rounded-xl flex items-start gap-3.5">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-rpg-dark border-2 border-amber-400 flex items-center justify-center text-amber-400 text-lg sm:text-xl rounded-lg shrink-0 shadow-inner">
+                        <i class="fa-solid fa-baby"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between">
+                            <span class="font-pixel text-[10px] text-amber-400">ITEM #03</span>
+                            <span class="text-[10px] font-pixel bg-green-900/60 text-green-300 px-2 py-0.5 rounded border border-green-600">Wajib</span>
+                        </div>
+                        <h4 class="font-bold text-white text-sm sm:text-base mt-1">Fotocopy Akta Kelahiran</h4>
+                        <p class="text-xs text-gray-300 mt-0.5">Dokumen resmi bukti pencatatan kelahiran calon murid.</p>
+                    </div>
+                </div>
+
+                <!-- Requirement 4 -->
+                <div class="loot-item p-4 rounded-xl flex items-start gap-3.5">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-rpg-dark border-2 border-amber-400 flex items-center justify-center text-amber-400 text-lg sm:text-xl rounded-lg shrink-0 shadow-inner">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between">
+                            <span class="font-pixel text-[10px] text-amber-400">ITEM #04</span>
+                            <span class="text-[10px] font-pixel bg-green-900/60 text-green-300 px-2 py-0.5 rounded border border-green-600">Wajib</span>
+                        </div>
+                        <h4 class="font-bold text-white text-sm sm:text-base mt-1">Fotocopy Kartu Keluarga</h4>
+                        <p class="text-xs text-gray-300 mt-0.5">Kartu keluarga domisili terbaru sebagai verifikasi data keluarga.</p>
+                    </div>
+                </div>
+
+                <!-- Requirement 5 -->
+                <div class="loot-item p-4 rounded-xl flex items-start gap-3.5 md:col-span-2">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-rpg-dark border-2 border-amber-400 flex items-center justify-center text-amber-400 text-lg sm:text-xl rounded-lg shrink-0 shadow-inner">
+                        <i class="fa-solid fa-id-card-clip"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between">
+                            <span class="font-pixel text-[10px] text-amber-400">ITEM #05</span>
+                            <span class="text-[10px] font-pixel bg-purple-900/60 text-purple-300 px-2 py-0.5 rounded border border-purple-600">Opsional</span>
+                        </div>
+                        <h4 class="font-bold text-white text-sm sm:text-base mt-1">Fotocopy KIP / PKH (Apabila ada)</h4>
+                        <p class="text-xs text-gray-300 mt-0.5">Kartu Indonesia Pintar atau Program Keluarga Harapan bagi yang memiliki.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            <!-- Online Quest Card -->
+            <div class="bg-gradient-to-t from-rpg-card to-rpg-surface p-6 rounded-2xl border-2 border-amber-500/50 flex flex-col justify-between shadow-xl">
+                <div>
+                    <div class="inline-block p-2.5 bg-amber-500/10 rounded-lg text-amber-400 text-xl mb-3">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="font-fantasy text-lg sm:text-xl font-bold text-white mb-2">Pendaftaran Online</h3>
+                    <p class="text-xs text-gray-300 mb-6">Lebih cepat dan praktis! Kirimkan data dan dokumen persyaratan langsung melalui formulir digital kami.</p>
+                </div>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfqOawSZ_QhaIp2hs5w4W-CMOy7R45z8KcTajmCDKIBfIF6eQ/viewform" target="_blank" rel="noopener noreferrer" 
+                   class="rpg-button inline-flex items-center justify-center gap-2 font-pixel text-[11px] sm:text-xs text-black font-extrabold px-6 py-4 rounded-xl uppercase tracking-wider text-center w-full">
+                   <i class="fa-solid fa-scroll text-sm"></i> Mulai Pendaftaran Online
+                </a>
+            </div>
+
+            <!-- Offline Quest Card -->
+            <div class="bg-gradient-to-t from-rpg-card to-rpg-surface p-6 rounded-2xl border-2 border-amber-500/50 flex flex-col justify-between shadow-xl">
+                <div>
+                    <div class="inline-block p-2.5 bg-blue-500/10 rounded-lg text-blue-400 text-xl mb-3">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <h3 class="font-fantasy text-lg sm:text-xl font-bold text-white mb-2">Kunjungan Offline (Langsung)</h3>
+                    <p class="text-xs text-gray-300 mb-2">Ingin mendaftar langsung ke sekolah? Silakan datang ke Sekolah dengan membawa seluruh persyaratan dokumen di atas.</p>
+                    <p class="text-[11px] text-amber-300 font-mono bg-black/40 p-2.5 rounded border border-amber-500/20 mb-4">
+                        <i class="fa-solid fa-location-dot text-amber-400 mr-1"></i>Kp. Dunguswiru RT 02 RW 03, Desa Dunguswiru, Kecamatan Blubur Limbangan, Kabupaten Garut, Jawa Barat 44186
+                    </p>
+                </div>
+                <a href="https://www.google.com/maps/place/SMK+WIRAGUNA+LIMBANGAN/@-7.0268828,107.9929522,17z/data=!3m1!4b1!4m6!3m5!1s0x2e68cba8a5d9476b:0xa0b76dc02d1afa09!8m2!3d-7.0268881!4d107.9955271!16s%2Fg%2F11ckkyfvm8?entry=ttu&amp;g_ep=EgoyMDI2MDgyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" 
+                   class="rpg-button-secondary inline-flex items-center justify-center gap-2 font-pixel text-[11px] sm:text-xs text-white font-extrabold px-6 py-4 rounded-xl uppercase tracking-wider text-center w-full">
+                   <i class="fa-solid fa-map text-sm"></i> Buka Peta Lokasi Sekolah
+                </a>
+            </div>
+        </section>
+
+        <section class="text-center bg-gradient-to-r from-rpg-surface via-rpg-card to-rpg-surface p-6 sm:p-8 rounded-2xl border border-amber-500/30 mb-10 shadow-lg">
+            <h3 class="font-fantasy text-base sm:text-lg font-bold text-amber-200 mb-2">Ingin Tahu Lebih Banyak Tentang SMK Wiraguna?</h3>
+            <p class="text-xs text-gray-300 mb-4 max-w-lg mx-auto">Kenali fasilitas, program keahlian, dan aktivitas seru para petualang di portal resmi kami.</p>
+            <a href="https://smkwiraguna.sch.id" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-amber-400 hover:text-amber-300 underline underline-offset-4 font-sans transition-colors">
+                <i class="fa-solid fa-compass"></i> Jelajahi Website Resmi SMK Wiraguna
+            </a>
+        </section>
+
+        <footer class="text-center border-t border-amber-500/20 pt-6 pb-8 text-xs text-gray-400 font-mono">
+            <p class="text-amber-300/80 font-bold mb-1">© 2026 SPMB SMK Wiraguna Limbangan - Kabupaten Garut</p>
+            <p>"Excellent, Dignity, Inovative"</p>
+        </footer>
+    </div>
+
+</body>
+</html>
