@@ -1,499 +1,383 @@
 <!doctype html>
-<html lang="id" class="dark">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SPMB SMK Wiraguna Limbangan</title>
+    <title>SPMB 2026/2027 - SMK Wiraguna Limbangan</title>
+    <meta
+      name="description"
+      content="Informasi pendaftaran murid baru SMK Wiraguna Limbangan Tahun Ajaran 2026/2027: syarat, cara daftar, lokasi, dan kontak panitia."
+    />
 
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
-        darkMode: "class",
         theme: {
           extend: {
-            fontFamily: {
-              pixel: ['"Press Start 2P"', "monospace"],
-              fantasy: ['"Cinzel"', "serif"],
-              sans: ['"Inter"', "sans-serif"],
-            },
+            fontFamily: { sans: ['"Plus Jakarta Sans"', "Inter", "sans-serif"] },
             colors: {
-              rpg: {
-                dark: "#0d0c1d",
-                surface: "#16152a",
-                card: "#1f1e38",
-                gold: "#f39c12",
-                goldHover: "#f1c40f",
-                border: "#e4b14a",
-                parchment: "#fdf6e2",
-                accent: "#e74c3c",
-              },
+              navy: { 900: "#0b2240", 800: "#0f2d52", 700: "#16396a" },
+              gold: { 400: "#fbbf24", 500: "#f59e0b", 600: "#d97706" },
             },
           },
         },
       };
     </script>
-
-    <!-- Google Fonts for Fantasy & Pixel aesthetic -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <!-- FontAwesome for RPG Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
     <style>
-      body {
-        background-color: #0d0c1d;
-        color: #fdf6e2;
-        font-family: "Inter", sans-serif;
-        background-image: radial-gradient(
-            circle at 20% 20%,
-            rgba(142, 68, 173, 0.15) 0%,
-            transparent 40%
-          ),
-          radial-gradient(
-            circle at 80% 80%,
-            rgba(243, 156, 18, 0.1) 0%,
-            transparent 40%
-          );
-        min-height: 100vh;
-        overflow-x: hidden;
+      html { scroll-behavior: smooth; }
+      body { background: #f4f7fb; color: #1e293b; -webkit-font-smoothing: antialiased; }
+      a:focus-visible, button:focus-visible, input:focus-visible {
+        outline: 3px solid #f59e0b; outline-offset: 2px;
       }
-
-      .rpg-panel {
-        background: linear-gradient(135deg, #1f1e38 0%, #131226 100%);
-        border: 2px solid #e4b14a;
-        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5),
-          0 0 15px rgba(243, 156, 18, 0.1);
+      .hero-bg {
+        background:
+          radial-gradient(circle at 85% 10%, rgba(251,191,36,.25), transparent 40%),
+          linear-gradient(160deg, #0b2240 0%, #16396a 100%);
       }
-
-      .rpg-button {
-        background: linear-gradient(180deg, #f39c12 0%, #d35400 100%);
-        border: 3px solid #f1c40f;
-        box-shadow: 0 6px 0 #8e44ad, 0 10px 20px rgba(0, 0, 0, 0.4);
-        text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.6);
-        transition: all 0.15s ease;
-      }
-
-      .rpg-button:hover {
-        background: linear-gradient(180deg, #f5b041 0%, #e67e22 100%);
-        transform: translateY(2px);
-        box-shadow: 0 4px 0 #8e44ad, 0 8px 15px rgba(0, 0, 0, 0.4);
-      }
-
-      .rpg-button:active {
-        transform: translateY(6px);
-        box-shadow: 0 0 0 #8e44ad, 0 4px 8px rgba(0, 0, 0, 0.4);
-      }
-
-      .rpg-button-secondary {
-        background: linear-gradient(180deg, #34495e 0%, #2c3e50 100%);
-        border: 3px solid #5d6d7e;
-        box-shadow: 0 6px 0 #1b2631, 0 10px 20px rgba(0, 0, 0, 0.4);
-        text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.6);
-        transition: all 0.15s ease;
-      }
-
-      .rpg-button-secondary:hover {
-        background: linear-gradient(180deg, #3a539b 0%, #203152 100%);
-        transform: translateY(2px);
-        box-shadow: 0 4px 0 #1b2631, 0 8px 15px rgba(0, 0, 0, 0.4);
-      }
-
-      .loot-item {
-        background: rgba(22, 21, 42, 0.8);
-        border: 2px dashed #e4b14a;
-        transition: all 0.2s ease;
-      }
-
-      .loot-item:hover {
-        border-style: solid;
-        border-color: #f1c40f;
-        transform: translateY(-3px);
-        background: rgba(31, 30, 56, 0.9);
-        box-shadow: 0 8px 20px rgba(243, 156, 18, 0.2);
-      }
+      .check-item input:checked + .box { background: #16a34a; border-color: #16a34a; }
+      .check-item input:checked + .box i { opacity: 1; transform: scale(1); }
+      .check-item input:checked ~ .label-text { color: #64748b; text-decoration: line-through; }
+      .box i { opacity: 0; transform: scale(.4); transition: all .15s ease; }
+      @media (max-width: 639px) { body { padding-bottom: 76px; } }
     </style>
   </head>
-  <body class="py-6 px-4 sm:px-6 md:px-8">
-    <div class="max-w-4xl mx-auto">
-      <header class="text-center mb-8 sm:mb-12">
-        <div
-          class="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 mb-3 bg-amber-500/10 border border-amber-400 text-amber-400 text-[10px] sm:text-xs font-pixel rounded-full shadow-lg animate-pulse mx-auto"
-        >
-          <i class="fa-solid fa-shield-halved"></i> SPMB 2026/2027
-        </div>
-        <h1
-          class="font-fantasy text-xl sm:text-3xl md:text-4xl font-black tracking-wide text-amber-300 mb-2 drop-shadow-[0_3px_10px_rgba(243,156,18,0.4)] px-2 text-center"
-        >
-          Sistem Penerimaan Murid Baru (SPMB)
+
+  <body class="font-sans text-base leading-relaxed">
+    <!-- HERO -->
+    <header class="hero-bg text-white">
+      <div class="max-w-3xl mx-auto px-5 pt-10 pb-14 sm:pt-16 sm:pb-20 text-center">
+        <span class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-sm font-semibold text-gold-400">
+          <i class="fa-solid fa-graduation-cap"></i> Tahun Ajaran 2026/2027
+        </span>
+        <h1 class="mt-5 text-3xl sm:text-5xl font-extrabold leading-tight">
+          Pendaftaran Murid Baru<br />
+          <span class="text-gold-400">SMK Wiraguna Limbangan</span>
         </h1>
-        <h1
-          class="font-fantasy text-xl sm:text-3xl md:text-4xl font-black tracking-wide text-amber-300 mb-2 drop-shadow-[0_3px_10px_rgba(243,156,18,0.4)] px-2 text-center"
-        >
-          SMK WIRAGUNA LIMBANGAN
-        </h1>
-        <p
-          class="text-xs sm:text-sm text-gray-300 max-w-2xl mx-auto leading-relaxed px-4 font-sans text-center"
-        >
-          Selamat datang di halaman informasi SPMB SMK Wiraguna Limbangan.
+        <p class="mt-4 text-base sm:text-lg text-slate-200 max-w-xl mx-auto">
+          Daftar mudah dalam 3 langkah. Siapkan berkas, isi formulir online,
+          lalu datang ke sekolah.
         </p>
-      </header>
 
-      <!-- PAPAN PENGUMUMAN -->
-      <section class="rpg-panel rounded-xl p-5 sm:p-8 mb-8 text-center">
-        <div
-          class="flex flex-col items-center justify-center gap-2 mb-5 border-b border-amber-500/30 pb-4"
-        >
-          <h2
-            class="font-fantasy text-xl sm:text-2xl font-bold text-amber-200 text-center tracking-wide"
-          >
-            PENGUMUMAN
-          </h2>
-        </div>
-
-        <div class="w-full my-3">
-          <p
-            class="text-gray-200 text-xs sm:text-sm md:text-base leading-relaxed font-sans text-center bg-black/40 p-5 sm:p-6 rounded-xl border border-amber-500/20 shadow-inner"
-          >
-            Kepada seluruh calon siswa baru yang ingin mendaftar, silakan
-            mempersiapkan dan mengumpulkan seluruh dokumen persyaratan yang
-            tertera di bawah ini, serta mengisi formulir pendaftaran yang telah
-            disediakan.
-          </p>
-        </div>
-      </section>
-
-      <!-- SYARAT PENDAFTARAN -->
-      <section class="mb-10">
-        <div class="text-center mb-6">
-          <h3
-            class="font-fantasy text-lg sm:text-xl font-bold text-amber-300 inline-flex items-center justify-center gap-2"
-          >
-            <i class="fa-solid fa-briefcase text-amber-400"></i> Syarat
-            Pendaftaran
-          </h3>
-          <p class="text-xs font-pixel text-gray-400 mt-1">
-            5 Item Dokumen Wajib & Tambahan
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 gap-3.5 sm:gap-4 max-w-2xl mx-auto">
-          <!-- Requirement 1 -->
-          <div
-            class="loot-item p-4 rounded-xl flex items-start gap-3.5 text-left"
-          >
-            <div
-              class="w-10 h-10 sm:w-12 sm:h-12 bg-rpg-dark border-2 border-amber-400 flex items-center justify-center text-amber-400 text-lg sm:text-xl rounded-lg shrink-0 shadow-inner"
-            >
-              <i class="fa-solid fa-file-pen"></i>
-            </div>
-            <div class="flex-1">
-              <div class="flex items-center justify-between">
-                <span class="font-pixel text-[10px] text-amber-400"
-                  >ITEM #01</span
-                >
-                <span
-                  class="text-[10px] font-pixel bg-green-900/60 text-green-300 px-2 py-0.5 rounded border border-green-600"
-                  >Wajib</span
-                >
-              </div>
-              <h4 class="font-bold text-white text-sm sm:text-base mt-1">
-                Mengisi Formulir Pendaftaran
-              </h4>
-              <p class="text-xs text-gray-300 mt-0.5">
-                Mengisi data diri lengkap pada formulir pendaftaran.
-              </p>
-            </div>
-          </div>
-
-          <!-- Requirement 2 -->
-          <div
-            class="loot-item p-4 rounded-xl flex items-start gap-3.5 text-left"
-          >
-            <div
-              class="w-10 h-10 sm:w-12 sm:h-12 bg-rpg-dark border-2 border-amber-400 flex items-center justify-center text-amber-400 text-lg sm:text-xl rounded-lg shrink-0 shadow-inner"
-            >
-              <i class="fa-solid fa-graduation-cap"></i>
-            </div>
-            <div class="flex-1">
-              <div class="flex items-center justify-between">
-                <span class="font-pixel text-[10px] text-amber-400"
-                  >ITEM #02</span
-                >
-                <span
-                  class="text-[10px] font-pixel bg-green-900/60 text-green-300 px-2 py-0.5 rounded border border-green-600"
-                  >Wajib</span
-                >
-              </div>
-              <h4 class="font-bold text-white text-sm sm:text-base mt-1">
-                Fotocopy Ijazah SD/MI & SMP/MTS
-              </h4>
-              <p class="text-xs text-gray-300 mt-0.5">
-                Lampirkan fotocopy ijazah tingkat sebelumnya.
-              </p>
-            </div>
-          </div>
-
-          <!-- Requirement 3 -->
-          <div
-            class="loot-item p-4 rounded-xl flex items-start gap-3.5 text-left"
-          >
-            <div
-              class="w-10 h-10 sm:w-12 sm:h-12 bg-rpg-dark border-2 border-amber-400 flex items-center justify-center text-amber-400 text-lg sm:text-xl rounded-lg shrink-0 shadow-inner"
-            >
-              <i class="fa-solid fa-baby"></i>
-            </div>
-            <div class="flex-1">
-              <div class="flex items-center justify-between">
-                <span class="font-pixel text-[10px] text-amber-400"
-                  >ITEM #03</span
-                >
-                <span
-                  class="text-[10px] font-pixel bg-green-900/60 text-green-300 px-2 py-0.5 rounded border border-green-600"
-                  >Wajib</span
-                >
-              </div>
-              <h4 class="font-bold text-white text-sm sm:text-base mt-1">
-                Fotocopy Akta Kelahiran
-              </h4>
-              <p class="text-xs text-gray-300 mt-0.5">
-                Dokumen resmi bukti pencatatan kelahiran calon murid.
-              </p>
-            </div>
-          </div>
-
-          <!-- Requirement 4 -->
-          <div
-            class="loot-item p-4 rounded-xl flex items-start gap-3.5 text-left"
-          >
-            <div
-              class="w-10 h-10 sm:w-12 sm:h-12 bg-rpg-dark border-2 border-amber-400 flex items-center justify-center text-amber-400 text-lg sm:text-xl rounded-lg shrink-0 shadow-inner"
-            >
-              <i class="fa-solid fa-house-chimney"></i>
-            </div>
-            <div class="flex-1">
-              <div class="flex items-center justify-between">
-                <span class="font-pixel text-[10px] text-amber-400"
-                  >ITEM #04</span
-                >
-                <span
-                  class="text-[10px] font-pixel bg-green-900/60 text-green-300 px-2 py-0.5 rounded border border-green-600"
-                  >Wajib</span
-                >
-              </div>
-              <h4 class="font-bold text-white text-sm sm:text-base mt-1">
-                Fotocopy Kartu Keluarga
-              </h4>
-              <p class="text-xs text-gray-300 mt-0.5">
-                Kartu keluarga domisili terbaru sebagai verifikasi data
-                keluarga.
-              </p>
-            </div>
-          </div>
-
-          <!-- Requirement 5 -->
-          <div
-            class="loot-item p-4 rounded-xl flex items-start gap-3.5 text-left"
-          >
-            <div
-              class="w-10 h-10 sm:w-12 sm:h-12 bg-rpg-dark border-2 border-amber-400 flex items-center justify-center text-amber-400 text-lg sm:text-xl rounded-lg shrink-0 shadow-inner"
-            >
-              <i class="fa-solid fa-id-card-clip"></i>
-            </div>
-            <div class="flex-1">
-              <div class="flex items-center justify-between">
-                <span class="font-pixel text-[10px] text-amber-400"
-                  >ITEM #05</span
-                >
-                <span
-                  class="text-[10px] font-pixel bg-purple-900/60 text-purple-300 px-2 py-0.5 rounded border border-purple-600"
-                  >Opsional</span
-                >
-              </div>
-              <h4 class="font-bold text-white text-sm sm:text-base mt-1">
-                Fotocopy KIP / PKH (Apabila ada)
-              </h4>
-              <p class="text-xs text-gray-300 mt-0.5">
-                Kartu Indonesia Pintar atau Program Keluarga Harapan bagi yang
-                memiliki.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- TATA CARA PENDAFTARAN -->
-      <section class="grid grid-cols-1 gap-6 mb-10 max-w-2xl mx-auto">
-        <!-- Pendaftaran Online -->
-        <div
-          class="bg-gradient-to-t from-rpg-card to-rpg-surface p-6 rounded-2xl border-2 border-amber-500/50 flex flex-col justify-between shadow-xl text-center"
-        >
-          <div>
-            <div
-              class="inline-block p-2.5 bg-amber-500/10 rounded-lg text-amber-400 text-xl mb-3"
-            >
-              <i class="fa-solid fa-laptop-code"></i>
-            </div>
-            <h3
-              class="font-fantasy text-lg sm:text-xl font-bold text-white mb-2 text-center"
-            >
-              Form Pendaftaran
-            </h3>
-            <p class="text-xs text-gray-300 mb-4 text-center">
-              Isi formulir pendaftaran secara online terlebih dahulu untuk
-              pendataan awal.
-              <strong class="text-amber-300"
-                >Setelah mengisi form, calon siswa tetap wajib datang langsung
-                ke sekolah</strong
-              >
-              dengan membawa seluruh persyaratan dokumen di atas.
-            </p>
-          </div>
+        <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSfqOawSZ_QhaIp2hs5w4W-CMOy7R45z8KcTajmCDKIBfIF6eQ/viewform"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="rpg-button inline-flex items-center justify-center gap-2 font-pixel text-[11px] sm:text-xs text-black font-extrabold px-6 py-4 rounded-xl uppercase tracking-wider text-center w-full"
+            target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-400 text-navy-900 font-extrabold text-lg px-8 py-4 rounded-xl shadow-lg transition"
           >
-            <i class="fa-solid fa-scroll text-sm"></i> Isi Formulir Online
+            <i class="fa-solid fa-pen-to-square"></i> Daftar Sekarang
           </a>
-        </div>
-
-        <!-- Pendaftaran / Kunjungan Offline -->
-        <div
-          class="bg-gradient-to-t from-rpg-card to-rpg-surface p-6 rounded-2xl border-2 border-amber-500/50 flex flex-col justify-between shadow-xl text-center"
-        >
-          <div>
-            <div
-              class="inline-block p-2.5 bg-blue-500/10 rounded-lg text-blue-400 text-xl mb-3"
-            >
-              <i class="fa-solid fa-map-location-dot"></i>
-            </div>
-            <h3
-              class="font-fantasy text-lg sm:text-xl font-bold text-white mb-2 text-center"
-            >
-              Kunjungan ke Sekolah (Offline)
-            </h3>
-            <p class="text-xs text-gray-300 mb-2 text-center">
-              Ingin mendaftar langsung di tempat? Silakan datang langsung ke
-              sekolah dengan membawa seluruh persyaratan dokumen yang tercantum.
-            </p>
-            <p
-              class="text-[11px] text-amber-300 font-mono bg-black/40 p-2.5 rounded border border-amber-500/20 mb-4 text-center"
-            >
-              <i class="fa-solid fa-location-dot text-amber-400 mr-1"></i>Kp.
-              Dunguswiru RT 02 RW 03, Desa Dunguswiru, Kecamatan Blubur
-              Limbangan, Kabupaten Garut, Jawa Barat 44186
-            </p>
-          </div>
           <a
-            href="https://www.google.com/maps/place/SMK+WIRAGUNA+LIMBANGAN/@-7.0268828,107.9929522,17z/data=!3m1!4b1!4m6!3m5!1s0x2e68cba8a5d9476b:0xa0b76dc02d1afa09!8m2!3d-7.0268881!4d107.9955271!16s%2Fg%2F11ckkyfvm8?entry=ttu&amp;g_ep=EgoyMDI2MDgyNS4wIKXMDSoASAFQAw%3D%3D"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="rpg-button-secondary inline-flex items-center justify-center gap-2 font-pixel text-[11px] sm:text-xs text-white font-extrabold px-6 py-4 rounded-xl uppercase tracking-wider text-center w-full"
+            href="#syarat"
+            class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 font-bold text-lg px-8 py-4 rounded-xl transition"
           >
-            <i class="fa-solid fa-map text-sm"></i> Buka Peta Lokasi Sekolah
+            <i class="fa-solid fa-list-check"></i> Lihat Syarat
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-5 -mt-8 pb-10 space-y-12">
+      <!-- PENGUMUMAN -->
+      <section class="bg-amber-50 border-l-8 border-gold-500 rounded-2xl p-5 sm:p-6 shadow-md">
+        <div class="flex gap-4">
+          <div class="text-gold-600 text-2xl pt-0.5"><i class="fa-solid fa-bullhorn"></i></div>
+          <div>
+            <h2 class="font-extrabold text-lg text-navy-900">Pengumuman</h2>
+            <p class="mt-1 text-slate-700">
+              Untuk seluruh calon siswa baru: <strong>siapkan semua berkas persyaratan</strong>
+              di bawah ini dan <strong>isi formulir pendaftaran</strong> yang sudah disediakan.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ALUR -->
+      <section aria-labelledby="alur">
+        <h2 id="alur" class="text-2xl sm:text-3xl font-extrabold text-navy-900 text-center">Cara Mendaftar</h2>
+        <p class="text-center text-slate-600 mt-1">Ikuti 3 langkah berikut</p>
+
+        <ol class="mt-6 grid gap-4 sm:grid-cols-3">
+          <li class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200 text-center">
+            <div class="mx-auto w-12 h-12 rounded-full bg-navy-800 text-white font-extrabold text-xl flex items-center justify-center">1</div>
+            <h3 class="mt-3 font-bold text-navy-900">Siapkan Berkas</h3>
+            <p class="text-sm text-slate-600 mt-1">Kumpulkan semua dokumen sesuai daftar syarat.</p>
+          </li>
+          <li class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200 text-center">
+            <div class="mx-auto w-12 h-12 rounded-full bg-navy-800 text-white font-extrabold text-xl flex items-center justify-center">2</div>
+            <h3 class="mt-3 font-bold text-navy-900">Isi Formulir Online</h3>
+            <p class="text-sm text-slate-600 mt-1">Isi data diri lewat Google Form untuk pendataan awal.</p>
+          </li>
+          <li class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200 text-center">
+            <div class="mx-auto w-12 h-12 rounded-full bg-gold-500 text-navy-900 font-extrabold text-xl flex items-center justify-center">3</div>
+            <h3 class="mt-3 font-bold text-navy-900">Datang ke Sekolah</h3>
+            <p class="text-sm text-slate-600 mt-1">Bawa seluruh berkas untuk diserahkan langsung ke panitia.</p>
+          </li>
+        </ol>
+
+        <p class="mt-4 text-sm bg-blue-50 border border-blue-200 text-blue-900 rounded-xl p-4">
+          <i class="fa-solid fa-circle-info mr-1"></i>
+          <strong>Penting:</strong> mengisi formulir online saja belum cukup. Calon siswa
+          tetap wajib datang ke sekolah membawa berkas.
+        </p>
+      </section>
+
+      <!-- SYARAT -->
+      <section id="syarat" aria-labelledby="syarat-title" class="scroll-mt-6">
+        <h2 id="syarat-title" class="text-2xl sm:text-3xl font-extrabold text-navy-900 text-center">Syarat Pendaftaran</h2>
+        <p class="text-center text-slate-600 mt-1">Centang berkas yang sudah kamu siapkan</p>
+
+        <div class="mt-5 bg-white rounded-2xl border border-slate-200 shadow-sm p-5">
+          <div class="flex items-center justify-between text-sm font-semibold">
+            <span id="progress-text" class="text-navy-900">0 dari 4 berkas wajib siap</span>
+            <button id="reset-btn" type="button" class="text-slate-500 hover:text-slate-800 underline">Reset</button>
+          </div>
+          <div class="mt-2 h-3 bg-slate-100 rounded-full overflow-hidden" role="progressbar" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0" id="progress-bar-wrap">
+            <div id="progress-bar" class="h-full bg-green-500 rounded-full transition-all duration-300" style="width:0%"></div>
+          </div>
+        </div>
+
+        <ul class="mt-4 space-y-3">
+          <li>
+            <label class="check-item flex items-start gap-4 bg-white rounded-2xl border border-slate-200 p-4 sm:p-5 shadow-sm cursor-pointer hover:border-gold-500 transition">
+              <input type="checkbox" class="sr-only req" data-key="form" />
+              <span class="box mt-1 w-7 h-7 shrink-0 rounded-lg border-2 border-slate-300 flex items-center justify-center text-white text-sm"><i class="fa-solid fa-check"></i></span>
+              <span class="flex-1">
+                <span class="flex flex-wrap items-center gap-2">
+                  <span class="label-text font-bold text-navy-900">Mengisi Formulir Pendaftaran</span>
+                  <span class="text-xs font-bold bg-green-100 text-green-800 px-2 py-0.5 rounded-full">Wajib</span>
+                </span>
+                <span class="block text-sm text-slate-600 mt-0.5">Isi data diri dengan lengkap dan benar.</span>
+              </span>
+              <i class="fa-solid fa-file-pen text-2xl text-slate-300 hidden sm:block"></i>
+            </label>
+          </li>
+          <li>
+            <label class="check-item flex items-start gap-4 bg-white rounded-2xl border border-slate-200 p-4 sm:p-5 shadow-sm cursor-pointer hover:border-gold-500 transition">
+              <input type="checkbox" class="sr-only req" data-key="ijazah" />
+              <span class="box mt-1 w-7 h-7 shrink-0 rounded-lg border-2 border-slate-300 flex items-center justify-center text-white text-sm"><i class="fa-solid fa-check"></i></span>
+              <span class="flex-1">
+                <span class="flex flex-wrap items-center gap-2">
+                  <span class="label-text font-bold text-navy-900">Fotocopy Ijazah SD/MI &amp; SMP/MTs</span>
+                  <span class="text-xs font-bold bg-green-100 text-green-800 px-2 py-0.5 rounded-full">Wajib</span>
+                </span>
+                <span class="block text-sm text-slate-600 mt-0.5">Ijazah dari jenjang sekolah sebelumnya.</span>
+              </span>
+              <i class="fa-solid fa-graduation-cap text-2xl text-slate-300 hidden sm:block"></i>
+            </label>
+          </li>
+          <li>
+            <label class="check-item flex items-start gap-4 bg-white rounded-2xl border border-slate-200 p-4 sm:p-5 shadow-sm cursor-pointer hover:border-gold-500 transition">
+              <input type="checkbox" class="sr-only req" data-key="akta" />
+              <span class="box mt-1 w-7 h-7 shrink-0 rounded-lg border-2 border-slate-300 flex items-center justify-center text-white text-sm"><i class="fa-solid fa-check"></i></span>
+              <span class="flex-1">
+                <span class="flex flex-wrap items-center gap-2">
+                  <span class="label-text font-bold text-navy-900">Fotocopy Akta Kelahiran</span>
+                  <span class="text-xs font-bold bg-green-100 text-green-800 px-2 py-0.5 rounded-full">Wajib</span>
+                </span>
+                <span class="block text-sm text-slate-600 mt-0.5">Dokumen resmi bukti kelahiran calon siswa.</span>
+              </span>
+              <i class="fa-solid fa-baby text-2xl text-slate-300 hidden sm:block"></i>
+            </label>
+          </li>
+          <li>
+            <label class="check-item flex items-start gap-4 bg-white rounded-2xl border border-slate-200 p-4 sm:p-5 shadow-sm cursor-pointer hover:border-gold-500 transition">
+              <input type="checkbox" class="sr-only req" data-key="kk" />
+              <span class="box mt-1 w-7 h-7 shrink-0 rounded-lg border-2 border-slate-300 flex items-center justify-center text-white text-sm"><i class="fa-solid fa-check"></i></span>
+              <span class="flex-1">
+                <span class="flex flex-wrap items-center gap-2">
+                  <span class="label-text font-bold text-navy-900">Fotocopy Kartu Keluarga (KK)</span>
+                  <span class="text-xs font-bold bg-green-100 text-green-800 px-2 py-0.5 rounded-full">Wajib</span>
+                </span>
+                <span class="block text-sm text-slate-600 mt-0.5">Gunakan KK terbaru untuk verifikasi data keluarga.</span>
+              </span>
+              <i class="fa-solid fa-house-chimney text-2xl text-slate-300 hidden sm:block"></i>
+            </label>
+          </li>
+          <li>
+            <label class="check-item flex items-start gap-4 bg-slate-50 rounded-2xl border border-dashed border-slate-300 p-4 sm:p-5 cursor-pointer hover:border-gold-500 transition">
+              <input type="checkbox" class="sr-only" data-key="kip" />
+              <span class="box mt-1 w-7 h-7 shrink-0 rounded-lg border-2 border-slate-300 flex items-center justify-center text-white text-sm"><i class="fa-solid fa-check"></i></span>
+              <span class="flex-1">
+                <span class="flex flex-wrap items-center gap-2">
+                  <span class="label-text font-bold text-navy-900">Fotocopy KIP / PKH</span>
+                  <span class="text-xs font-bold bg-purple-100 text-purple-800 px-2 py-0.5 rounded-full">Opsional</span>
+                </span>
+                <span class="block text-sm text-slate-600 mt-0.5">Hanya jika punya Kartu Indonesia Pintar atau Program Keluarga Harapan.</span>
+              </span>
+              <i class="fa-solid fa-id-card-clip text-2xl text-slate-300 hidden sm:block"></i>
+            </label>
+          </li>
+        </ul>
+      </section>
+
+      <!-- DAFTAR ONLINE / OFFLINE -->
+      <section aria-labelledby="pilih-title">
+        <h2 id="pilih-title" class="text-2xl sm:text-3xl font-extrabold text-navy-900 text-center">Mulai Mendaftar</h2>
+        <p class="text-center text-slate-600 mt-1">Isi formulir online, lalu datang ke sekolah</p>
+
+        <div class="mt-6 grid gap-5 sm:grid-cols-2">
+          <div class="bg-white rounded-2xl border-2 border-gold-500 p-6 shadow-md flex flex-col">
+            <div class="w-12 h-12 rounded-xl bg-amber-100 text-gold-600 text-xl flex items-center justify-center"><i class="fa-solid fa-laptop"></i></div>
+            <h3 class="mt-3 text-xl font-extrabold text-navy-900">1. Formulir Online</h3>
+            <p class="mt-1 text-slate-600 text-sm flex-1">
+              Isi formulir untuk pendataan awal. Setelah itu, jangan lupa
+              <strong>datang ke sekolah</strong> membawa berkas.
+            </p>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfqOawSZ_QhaIp2hs5w4W-CMOy7R45z8KcTajmCDKIBfIF6eQ/viewform"
+              target="_blank" rel="noopener noreferrer"
+              class="mt-5 inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-400 text-navy-900 font-extrabold px-6 py-3.5 rounded-xl transition"
+            >
+              <i class="fa-solid fa-pen-to-square"></i> Isi Formulir Online
+            </a>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-md flex flex-col">
+            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 text-xl flex items-center justify-center"><i class="fa-solid fa-school"></i></div>
+            <h3 class="mt-3 text-xl font-extrabold text-navy-900">2. Datang ke Sekolah</h3>
+            <p class="mt-1 text-slate-600 text-sm">
+              Bawa semua berkas persyaratan. Bisa juga mendaftar langsung di tempat.
+            </p>
+            <address class="not-italic mt-3 text-sm text-slate-700 bg-slate-50 rounded-xl p-3 flex gap-2 flex-1">
+              <i class="fa-solid fa-location-dot text-red-500 mt-1"></i>
+              <span>
+                Kp. Dunguswiru RT 02 RW 03, Desa Dunguswiru, Kec. Blubur Limbangan,
+                Kab. Garut, Jawa Barat 44186
+              </span>
+            </address>
+            <a
+              href="https://www.google.com/maps/place/SMK+WIRAGUNA+LIMBANGAN/@-7.0268828,107.9929522,17z/data=!3m1!4b1!4m6!3m5!1s0x2e68cba8a5d9476b:0xa0b76dc02d1afa09!8m2!3d-7.0268881!4d107.9955271!16s%2Fg%2F11ckkyfvm8?entry=ttu"
+              target="_blank" rel="noopener noreferrer"
+              class="mt-5 inline-flex items-center justify-center gap-2 bg-navy-800 hover:bg-navy-700 text-white font-extrabold px-6 py-3.5 rounded-xl transition"
+            >
+              <i class="fa-solid fa-map-location-dot"></i> Buka Peta Lokasi
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- KONTAK -->
+      <section aria-labelledby="kontak-title" class="bg-white rounded-2xl border border-slate-200 shadow-md p-6 sm:p-8">
+        <div class="text-center">
+          <h2 id="kontak-title" class="text-2xl font-extrabold text-navy-900">Ada Pertanyaan?</h2>
+          <p class="text-slate-600 mt-1">Hubungi panitia SPMB lewat WhatsApp</p>
+        </div>
+
+        <div class="mt-5 grid gap-4 sm:grid-cols-2">
+          <!-- TODO: ganti 62XXXXXXXXXX dengan nomor panitia (format 62, tanpa 0 di depan, tanpa spasi/tanda hubung) -->
+          <a
+            href="https://wa.me/62XXXXXXXXXX?text=Halo%20Panitia%20SPMB%20SMK%20Wiraguna%20Limbangan%2C%20saya%20ingin%20bertanya."
+            target="_blank" rel="noopener noreferrer"
+            class="flex items-center gap-4 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-xl p-4 transition"
+          >
+            <span class="w-12 h-12 rounded-full bg-emerald-600 text-white text-2xl flex items-center justify-center shrink-0"><i class="fa-brands fa-whatsapp"></i></span>
+            <span>
+              <span class="block font-bold text-navy-900">Panitia 1</span>
+              <span class="block text-sm text-slate-600">08xx-xxxx-xxxx</span>
+              <span class="block text-sm font-semibold text-emerald-700">Chat WhatsApp →</span>
+            </span>
+          </a>
+
+          <!-- TODO: ganti nomor Panitia 2 -->
+          <a
+            href="https://wa.me/62XXXXXXXXXX?text=Halo%20Panitia%20SPMB%20SMK%20Wiraguna%20Limbangan%2C%20saya%20ingin%20bertanya."
+            target="_blank" rel="noopener noreferrer"
+            class="flex items-center gap-4 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-xl p-4 transition"
+          >
+            <span class="w-12 h-12 rounded-full bg-emerald-600 text-white text-2xl flex items-center justify-center shrink-0"><i class="fa-brands fa-whatsapp"></i></span>
+            <span>
+              <span class="block font-bold text-navy-900">Panitia 2</span>
+              <span class="block text-sm text-slate-600">08xx-xxxx-xxxx</span>
+              <span class="block text-sm font-semibold text-emerald-700">Chat WhatsApp →</span>
+            </span>
           </a>
         </div>
       </section>
 
-      <!-- SECTION KONTAK / PUSAT BANTUAN PENDAFTARAN -->
-      <section
-        class="rpg-panel rounded-2xl p-6 sm:p-8 mb-10 max-w-2xl mx-auto shadow-xl"
-      >
-        <div class="text-center mb-6">
-          <span
-            class="bg-blue-600/30 border border-blue-400 text-blue-300 text-[10px] font-pixel px-3 py-1 rounded-full uppercase inline-block mb-2"
-          >
-            <i class="fa-solid fa-headset mr-1"></i> Bantuan &amp; Tanya Jawab
-          </span>
-          <h3
-            class="font-fantasy text-xl font-bold text-amber-200 tracking-wide"
-          >
-            Pusat Informasi &amp; Kontak Pendaftaran
-          </h3>
-          <p class="text-xs text-gray-300 mt-1 max-w-md mx-auto">
-            Memiliki kendala atau pertanyaan perihal alur pendaftaran, persyaratan, atau jadwal? Silakan hubungi tim panitia kami melalui kontak di bawah ini.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-          <!-- WhatsApp / Telepon Panitia -->
-          <div class="bg-black/40 p-4 rounded-xl border border-amber-500/20 text-center flex flex-col justify-between">
-            <div>
-              <div class="text-emerald-400 text-xl mb-2">
-                <i class="fa-brands fa-whatsapp"></i>
-              </div>
-              <h4 class="font-bold text-white text-sm mb-1">WhatsApp</h4>
-              <p class="text-xs text-gray-300 font-mono mb-3">08xx-xxxx-xxxx (Panitia 1)</p>
-            </div>
-            <a
-              href="https://buatwr7-oss.github.io/maintenance/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-2.5 px-4 rounded-lg transition-colors shadow"
-            >
-              <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
-            </a>
-          </div>
-
-<!-- WhatsApp / Telepon Panitia -->
-          <div class="bg-black/40 p-4 rounded-xl border border-amber-500/20 text-center flex flex-col justify-between">
-            <div>
-              <div class="text-emerald-400 text-xl mb-2">
-                <i class="fa-brands fa-whatsapp"></i>
-              </div>
-              <h4 class="font-bold text-white text-sm mb-1">WhatsApp</h4>
-              <p class="text-xs text-gray-300 font-mono mb-3">08xx-xxxx-xxxx (Panitia 2)</p>
-            </div>
-            <a
-              href="https://buatwr7-oss.github.io/maintenance/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-2.5 px-4 rounded-lg transition-colors shadow"
-            >
-              <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
-            </a>
-          </div>
-          
-      </section>
-
-      <section
-        class="text-center bg-gradient-to-r from-rpg-surface via-rpg-card to-rpg-surface p-6 sm:p-8 rounded-2xl border border-amber-500/30 mb-10 shadow-lg max-w-2xl mx-auto"
-      >
-        <h3
-          class="font-fantasy text-base sm:text-lg font-bold text-amber-200 mb-2 text-center"
-        >
-          Ingin Tahu Lebih Banyak Tentang SMK Wiraguna?
-        </h3>
-        <p class="text-xs text-gray-300 mb-4 max-w-lg mx-auto text-center">
-          Kenali fasilitas, program keahlian, dan aktivitas seru para petualang
-          di portal resmi kami.
+      <!-- WEBSITE SEKOLAH -->
+      <section class="bg-navy-800 text-white rounded-2xl p-6 sm:p-8 text-center">
+        <h2 class="text-xl font-extrabold">Ingin Tahu Lebih Banyak tentang SMK Wiraguna?</h2>
+        <p class="mt-1 text-slate-200 text-sm sm:text-base">
+          Lihat fasilitas, program keahlian, dan kegiatan sekolah di website resmi.
         </p>
         <a
           href="https://smkwiraguna.sch.id"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-bold text-amber-400 hover:text-amber-300 underline underline-offset-4 font-sans transition-colors"
+          target="_blank" rel="noopener noreferrer"
+          class="mt-4 inline-flex items-center justify-center gap-2 bg-white text-navy-900 hover:bg-gold-400 font-bold px-6 py-3 rounded-xl transition"
         >
-          <i class="fa-solid fa-compass"></i> Jelajahi Website Resmi SMK
-          Wiraguna
+          <i class="fa-solid fa-globe"></i> Kunjungi Website Resmi
         </a>
       </section>
+    </main>
 
-      <footer
-        class="text-center border-t border-amber-500/20 pt-6 pb-8 text-xs text-gray-400 font-mono"
+    <footer class="bg-navy-900 text-slate-300 text-center py-8 px-5 text-sm">
+      <p class="font-bold text-white">© 2026 SPMB SMK Wiraguna Limbangan - Kabupaten Garut</p>
+      <p class="mt-1 italic">"Excellent, Dignity, Innovative"</p>
+    </footer>
+
+    <!-- Tombol daftar tetap di bawah (HP) -->
+    <div class="sm:hidden fixed bottom-0 inset-x-0 z-50 bg-white/95 backdrop-blur border-t border-slate-200 p-3">
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSfqOawSZ_QhaIp2hs5w4W-CMOy7R45z8KcTajmCDKIBfIF6eQ/viewform"
+        target="_blank" rel="noopener noreferrer"
+        class="flex items-center justify-center gap-2 bg-gold-500 text-navy-900 font-extrabold text-lg py-3.5 rounded-xl shadow"
       >
-        <p class="text-amber-300/80 font-bold mb-1 text-center">
-          © 2026 SPMB SMK Wiraguna Limbangan - Kabupaten Garut
-        </p>
-        <p class="text-center">"Excellent, Dignity, Inovative"</p>
-      </footer>
+        <i class="fa-solid fa-pen-to-square"></i> Daftar Sekarang
+      </a>
     </div>
+
+    <script>
+      (function () {
+        var boxes = Array.prototype.slice.call(document.querySelectorAll('input[type="checkbox"][data-key]'));
+        var required = boxes.filter(function (b) { return b.classList.contains("req"); });
+        var text = document.getElementById("progress-text");
+        var bar = document.getElementById("progress-bar");
+        var wrap = document.getElementById("progress-bar-wrap");
+        var KEY = "spmb-checklist";
+
+        function load() {
+          try {
+            var saved = JSON.parse(localStorage.getItem(KEY) || "{}");
+            boxes.forEach(function (b) { b.checked = !!saved[b.dataset.key]; });
+          } catch (e) {}
+        }
+        function save() {
+          try {
+            var data = {};
+            boxes.forEach(function (b) { data[b.dataset.key] = b.checked; });
+            localStorage.setItem(KEY, JSON.stringify(data));
+          } catch (e) {}
+        }
+        function update() {
+          var done = required.filter(function (b) { return b.checked; }).length;
+          var total = required.length;
+          bar.style.width = (done / total) * 100 + "%";
+          wrap.setAttribute("aria-valuenow", done);
+          text.textContent = done === total
+            ? "Semua berkas wajib sudah siap! Silakan daftar."
+            : done + " dari " + total + " berkas wajib siap";
+        }
+
+        boxes.forEach(function (b) {
+          b.addEventListener("change", function () { save(); update(); });
+        });
+        document.getElementById("reset-btn").addEventListener("click", function () {
+          boxes.forEach(function (b) { b.checked = false; });
+          save(); update();
+        });
+
+        load();
+        update();
+      })();
+    </script>
   </body>
 </html>
